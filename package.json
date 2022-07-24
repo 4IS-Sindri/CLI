@@ -1,0 +1,11 @@
+{
+  "name": "@sindri/cli",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "4lch4 <hey@4lch4.email> (https://4lch4.com/)",
+  "license": "MIT"
+}
