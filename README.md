@@ -1,8 +1,6 @@
 # Sindri/CLI
 
-While working on this project I've come to a point where I'm doubting an API is the best solution. I'm going to try building it out as a CLI application first instead, and see where that gets me.
-
-This CLI application will make starting a new project much easier by providing simple mechanics for creating templates that can then be turned into a full-fledged project.
+This NPM package is currently a placeholder. I wanted to make sure I wouldn't lose this name slot so I'm publishing this while I work on the actual code.
 
 ## Dependencies
 
