@@ -37,6 +37,9 @@
     "templating",
     "sindri"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@4lch4/logger": "^1.9.2",
     "@4lch4/lt-commander": "^0.7.4",
