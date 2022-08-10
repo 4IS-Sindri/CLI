@@ -33,18 +33,33 @@ export class InitCmd extends BaseCommand {
     const tokenUtil = new TokenUtil(args[0])
     const ioUtil = new IOUtil(args[0])
 
-    const { questions } = await ioUtil.loadQuestionnaire()
+    const { name, description, interactions } = await ioUtil.loadQuestionnaire()
 
-    for (const question of questions) {
-      const answer = await inquirer.prompt<{ [key: string]: string }>({
-        name: question.name,
-        message: question.message,
-        default: question.default,
-        type: 'input'
-      })
+    logger.info(`Beginning questionnaire for ${name}...`)
+    logger.info(`Description: ${description}`)
 
-      const answerValue = answer[question.name]
-      if (answerValue && answerValue.length > 0) tokenMap[question.name] = answerValue
+    for (const interaction of interactions) {
+      logger.info(
+        `Processing ${interaction.questions.length} questions for ${interaction.filename}...`
+      )
+
+      for (const question of interaction.questions) {
+        const answer = await inquirer.prompt<{ [key: string]: string }>({
+          name: question.name,
+          message: question.message,
+          default: question.default,
+          type: 'input'
+        })
+
+        const answerValue = answer[question.name]
+        if (answerValue && answerValue.length > 0) {
+          logger.success('answerValue && answerValue.length > 0')
+          logger.success(`answerValue...`)
+          logger.success(JSON.stringify(answerValue, null, 2))
+          logger.success('question...')
+          logger.success(JSON.stringify(question, null, 2))
+        }
+      }
 
       // const answerValue = answer[iQuestion.name]
       // if (answerValue && answerValue.length > 0) tokenMap[iQuestion.name] = answerValue
@@ -88,7 +103,11 @@ export class InitCmd extends BaseCommand {
       'The questionnaire file to use.',
       QUESTIONNAIRE_FILE_NAME
     )
-    command.action(async () => this.run(command.args))
+    command.action(async () =>
+      this.run(command.args).then(() => {
+        logger.success('This is after the command has finished...')
+      })
+    )
 
     // command.addArgument(new Commander.Argument(''))
     // command.addOption(new Commander.Option(''))
