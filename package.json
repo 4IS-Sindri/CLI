@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "description": "A CLI application for creating/bootstrapping a new project.",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "bin": {
     "sindri": "dist/index.js"
