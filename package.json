@@ -11,7 +11,9 @@
   },
   "scripts": {
     "build": "tsc",
-    "pretty": "prettier"
+    "pretty": "prettier --write .",
+    "lint": "prettier -c .",
+    "test": "echo 'No tests have been added yet.'"
   },
   "author": {
     "name": "4lch4",
