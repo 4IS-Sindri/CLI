@@ -41,7 +41,7 @@
     "dayjs": "^1.11.4",
     "figlet": "^1.5.2",
     "fs-extra": "^10.1.0",
-    "inquirer": "^9.0.2",
+    "inquirer": "^9.1.0",
     "ora": "^6.1.2"
   },
   "devDependencies": {
