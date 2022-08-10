@@ -25,11 +25,18 @@
     "type": "git",
     "url": "ssh://git@git.4lch4.io:22022/Sindri/CLI.git"
   },
-  "keywords": [],
   "bugs": {
     "email": "sindri@4lch4.email",
     "url": "https://git.4lch4.io/Sindri/CLI/issues"
   },
+  "keywords": [
+    "cli",
+    "commander",
+    "templates",
+    "template",
+    "templating",
+    "sindri"
+  ],
   "dependencies": {
     "@4lch4/logger": "^1.9.2",
     "@4lch4/lt-commander": "^0.7.4",
