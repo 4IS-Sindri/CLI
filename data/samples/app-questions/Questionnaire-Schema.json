@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "http://sindri.rest/schemas/v1/schema.json",
+  "$comment": "The schema of a questionnaire for initializing a new project w/ Sindri.",
+  "title": "Sindri Questionnaire",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the project."
+    },
+    "description": {
+      "type": "string",
+      "description": "The description of the project."
+    },
+    "interactions": {
+      "type": "array",
+      "description": "The questions of the project.",
+      "items": {
+        "$ref": "#/definitions/interaction"
+      }
+    }
+  },
+  "definitions": {
+    "interaction": {
+      "type": "object",
+      "description": "An interaction for updating a file.",
+      "properties": {
+        "filename": {
+          "type": "string",
+          "description": "The name of the file to update."
+        },
+        "questions": {
+          "type": "array",
+          "description": "The questions of the file.",
+          "items": {
+            "$ref": "#/definitions/question"
+          }
+        }
+      }
+    },
+    "question": {
+      "type": "object",
+      "description": "A question to ask for the value of a given variable that need's to be replaced.",
+      "required": [
+        "name",
+        "message"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the variable the answer is for."
+        },
+        "description": {
+          "type": "string",
+          "description": "An (optional) description of the variable."
+        },
+        "type": {
+          "type": "string",
+          "description": "The data type of the answer (default: string).",
+          "default": "string",
+          "enum": [
+            "string",
+            "number",
+            "array",
+            "boolean"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "description": "The message to display when the question is asked."
+        },
+        "default": {
+          "description": "An (optional) default value of the variable.",
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "boolean"
+            }
+          ]
+        },
+        "choices": {
+          "items": {
+            "description": "If the answer is of type array, these are the choices to choose from.",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
