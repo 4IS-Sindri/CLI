@@ -6,6 +6,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
+  "license": "MIT",
   "bin": {
     "sindri": "dist/index.js"
   },
@@ -29,7 +30,6 @@
     "email": "sindri@4lch4.email",
     "url": "https://git.4lch4.io/Sindri/CLI/issues"
   },
-  "license": "MIT",
   "dependencies": {
     "@4lch4/logger": "^1.9.2",
     "@4lch4/lt-commander": "^0.7.4",
