@@ -15,16 +15,16 @@ export class InitCmd extends BaseCommand {
 
   protected async run(args: any): Promise<any> {
     // const { args, flags } = await this.parse(Init)
-    logger.info('args...')
+    logger.info('InitCmd#run... args...')
     logger.info(JSON.stringify(args, null, 2))
 
     const tokenMap: { [key: string]: string } = {
-      APP_NAME: 'hello-world',
-      APP_DESCRIPTION: 'A simple hello world application.',
-      APP_DISPLAY_NAME: 'Hello World',
-      APP_VERSION: '0.0.1',
-      REPO_OWNER: '4lch4',
-      REPO_NAME: 'hello-world'
+      APP_NAME: 'APP_NAME-Placeholder',
+      APP_DESCRIPTION: 'APP_DESCRIPTION-PlaceHolder',
+      APP_DISPLAY_NAME: 'APP_DISPLAY_NAME-PlaceHolder',
+      APP_VERSION: 'APP_VERSION-PlaceHolder',
+      REPO_OWNER: 'REPO_OWNER-PlaceHolder',
+      REPO_NAME: 'REPO_NAME-PlaceHolder'
     }
 
     logger.info('tokenMap before...')
